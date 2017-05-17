@@ -4,7 +4,7 @@ import numpy as np
 
 from collections import deque
 
-from robo.models.base_model import BaseModel
+#from robo.models.base_model import BaseModel
 from robo.util.normalization import (zero_mean_unit_var_normalization,
                                      zero_mean_unit_var_unnormalization)
 
@@ -161,7 +161,7 @@ class BayesianNeuralNetwork(BaseModel):
         self.y_mean = None
         self.y_std = None
 
-    @BaseModel._check_shapes_train
+#    @BaseModel._check_shapes_train
     def train(self, X, y, *args, **kwargs):
         """
         Trains the model on the provided data.
@@ -277,7 +277,7 @@ class BayesianNeuralNetwork(BaseModel):
 
         return -log_like, T.mean(mse)
 
-    @BaseModel._check_shapes_predict
+    #@BaseModel._check_shapes_predict
     def predict(self, X_test, return_individual_predictions=False, *args, **kwargs):
         """
         Returns the predictive mean and variance of the objective function at
